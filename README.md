@@ -52,3 +52,11 @@ Copiaré solo las carpetas que contengan A123 y A12345, estas dos cadenas que bu
                                    |--- file2
                                    |--- file....
 ````                 
+Serialized Folders
+
+![imagen](https://github.com/ekardian/dryncs/assets/6296036/2057ba43-383c-409f-9930-c9bc9e7c2e7b)
+
+Serialized Files
+
+![imagen](https://github.com/ekardian/dryncs/assets/6296036/854cd0b7-5860-44f1-8ca3-44cdfd7b81ed)
+
