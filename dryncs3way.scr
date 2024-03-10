@@ -1,0 +1,305 @@
+#!/bin/bash
+# Archivo configuración Variables de mdialog
+
+######################
+#    CONFIGURACIÓN   #
+######################
+
+# DESTINO
+
+dialogdest="$HOME/"
+dialogdest2="$HOME/"
+dialogdest3="$HOME/"
+
+# Lista de Pedido. Ruta Origen
+
+dialogorig="$HOME/"
+
+# Estos archivos se deben crear, es donde se volcarán las rutas de los directorios
+# Importante!!! ejecute siempre la 'opción 9 Actualizar Base de Datos' cuando
+# haya modificado o aumentado más directorios
+
+mallrepos="mallrepos"
+fallrepos="fallrepos"
+callrepos="callrepos"
+lallrepos="lallrepos"
+jallrepos="jallrepos"
+aallrepos="aallrepos"
+
+# Ruta fuente para copiar sus directorios(Ejecute la opción 9 cada vez que cambie esta variable)
+# Ejemplo
+# msourcepath="$HOME/Programs/REPO_MUSICA/"
+# En Cygwin
+#fsourcepath="/cygdrive/unidad/REPO_PELICULAS/"
+# En Linux
+#asourcepath="/path/to/REPO_APPS/"s
+
+msourcepath="/"
+fsourcepath="/"
+csourcepath="/"
+lsourcepath="/"
+jsourcepath="/"
+asourcepath="/"
+
+# Logs - Estos archivos deben ser creados en las rutas que se listan
+
+# Log Copias Realizadas
+copiadoslog="copiados.log"
+# Log Copias Fallidas
+fallidoslog="fallidos.log"
+# Log rsync
+rsynclog="dryncs.log"
+
+#######################
+#  FIN CONFIGURACIÓN  #
+#######################
+
+submenu () {
+  clear
+  local PS3='Por favor escoga una opción: '
+  local options=("Películas" "Música" "JUegos" "Apps" "Libros" "Comics" "Volver")
+  local opt
+  select opt in "${options[@]}"
+  do
+      case $opt in
+          "Películas")
+              if [ -f $fallrepos -a -d "$fsourcepath" ] ; then
+                cd "$fsourcepath"
+                find . -type f > "$fallrepos"
+                sed -i 's/\.\///g' "$fallrepos"
+                result=$(echo "DB Películas fallrepos Updated - Base de datos de Películas Actualizado")
+                display_result "INFORME"
+              else
+                result=$(echo "Falló Actualización de las Películas,\n
+revise la configuración de mdialog_conf\n
+y las variables:\n
+fallrepos\n
+fsourcepath")
+                display_result "INFORME DB PELÍCULAS"
+              fi
+              ;;
+          "Música")
+              if [ -f "$mallrepos" -a -d "$msourcepath" ]; then
+                cd "$msourcepath"
+                find . -type d > "$mallrepos"
+                sed -i 's/\.\///g' "$mallrepos"
+                result=$(echo "DB Music mallrepos Updated - Base de datos de Música Actualizada")
+                display_result "INFORME"
+              else
+                result=$(echo "Falló Actualización de mallrepos, revise la configuración mdialog_conf")
+                display_result "INFORME DB MÚSICA"
+              fi
+              ;;
+          "Juegos")
+              echo ""
+              ;;
+          "Apps")
+              echo ""
+              ;;
+          "Libros")
+              echo ""
+              ;;
+          "Comics")
+              echo ""
+              ;;
+          "Volver")
+              return
+              ;;
+          *) echo "invalid option $REPLY";;
+      esac
+      return
+  done
+}
+
+# while-menu-dialog: a menu driven system information program
+
+# Status Button
+DIALOG_CANCEL=1
+DIALOG_ESC=255
+HEIGHT=16
+WIDTH=0
+
+display_result() {
+  dialog --title "$1" \
+    --no-collapse \
+    --msgbox "$result" 0 0
+}
+
+while true; do
+  exec 3>&1
+  selection=$(dialog \
+    --backtitle "Panel del Sistema" \
+    --title "Menu" \
+    --cancel-label "Salir" \
+    --menu "Seleccione una Opción:" "$HEIGHT" "$WIDTH" 4 \
+    "1" "Listar Dispositivos Montados" \
+    "2" "Listar las palabras para buscar y copiar" \
+    "3" "Películas" \
+    "4" "Música" \
+    "5" "Actualizar Bases de Datos" \
+    2>&1 1>&3)
+    exit_status=$?
+    exec 3>&-
+# Button Status
+  case $exit_status in
+    $DIALOG_CANCEL)
+      clear
+      echo "Programa Terminado"
+      exit
+      ;;
+    $DIALOG_ESC)
+      clear
+      echo "Programa Abortado" >&2
+      exit 1
+      ;;
+  esac
+  case $selection in
+    1)
+      #result=$(df -Th && lsblk -o +UUID,PARTUUID)
+      result=$(lsblk -o +UUID,PARTUUID)
+      display_result "Dispositivos Montados"
+      ;;
+    2)
+      
+      origen=$(dialog --stdout --title "Ruta Archivo db:" --fselect "$dialogorig" 15 125)
+      pedido=$(cat "$origen")
+      dialog --no-collapse --title "Lista de Pedido" --msgbox "$pedido" 0 0
+      #exec "$0"
+      #break 3
+      ;;
+    3)
+# MOVIES BY FILM ID
+      counterc=0
+      counterf=0
+      regdate=$(date)
+      cliente=$(dialog --stdout --title "Datos Cliente:" --inputbox "Nombre y Apellido (Prefijo):" 0 0)
+      logcopy=$(echo -e "\n\n$cliente - $regdate\n\n" >> "$copiadoslog")
+      destino=$(dialog --stdout --title "Seleccionar Carpeta Destino:" --fselect "$dialogdest" 45 125)
+      destino2=$(dialog --stdout --title "Seleccionar CArpeta Destino 2: " --fselect "$dialogdest2" 45 125)
+      destino3=$(dialog --stdout --title "Seleccionar CArpeta Destino 3: " --fselect "$dialogdest3" 45 125)
+      origen=$(dialog --stdout --title "Ruta Lista (ej. mcid.txt)" --fselect "$dialogorig" 45 65)
+      lowtoupcase=$(sed -i "s/f/F/g" "$origen")
+      exec < "$origen"
+      while read -r line
+      do
+        lct=$(cat "$fallrepos" | grep -iw "$line")
+        lct2=$(grep -Piow "$line+" $fallrepos) # Extráe solo la palabra lct(M####) con -o usando regex de Pearl con -P
+        if [ "$lct2" == "$line" ]; then
+          fuente="${fsourcepath}${lct}"
+          rsync -ah --info=progress2 --log-file="$rsynclog" "$fuente" "$destino" --dry-run
+          #destino 2
+          rsync -ah --info=progress2 --log-file="$rsynclog" "$fuente" "$destino2" --dry-run
+          #destino 3
+          rsync -ah --info=progress2 --log-file="$rsynclog" "$fuente" "$destino3" --dry-run
+          copiados=$(echo -e "$line" >> "$copiadoslog")
+          let counterc=counterc+1
+        else
+          fallidos=$(echo -e "\n\n$cliente\n\n$line" >> "$fallidoslog")
+          listfails=$(echo "$line")
+          let counterf=counterf+1
+        fi
+      done
+      let counterrest=counterc-counterf
+      pedido=$(cat "$origen")
+      dialog --title "Copia Finalizada" \
+      --msgbox "\n
+          ============ Rutas ============\n
+      Lista de ID's     ==> $origen\n
+      Folder Destino    ==> $destino\n
+      Folder Destino 2  ==> $destino2\n
+      Folder Destino 3  ==> $destino3\n\n
+          ============ Items ============\n
+                  Reporte\n
+      -------------------------------\n
+      Total Copiados ==> #$counterrest\n
+      total Fallidos ==> #$counterf\n
+      Total Pedidos ==> #$counterc\n
+      -------------------------------\n\n
+      Items Copiados:\n
+      $pedido\n\n
+      Items Fallidos:\n
+      $listfails\n\n
+          ============ Logs ============\n
+      Log Copiados   ==> $copiadoslog\n
+      Log Fallidos   ==> $fallidoslog\n\n" 0 0
+      exec cat -n "$copiadoslog"
+      ;;
+    4)
+# MUSIC BY FOLDER ALBUM
+      counterc=0
+      counterf=0
+      regdate=$(date)
+      cliente=$(dialog --stdout --title "Datos Cliente:" --inputbox "Nombre y Apellido (Prefijo):" 0 0)
+      logcopy=$(echo -e "\n\n$cliente - $regdate\n\n" >> "$copiadoslog")
+      destino=$(dialog --stdout --title "Seleccionar Carpeta Destino:" --fselect "$dialogdest" 45 125)
+      destino2=$(dialog --stdout --title "Seleccionar Carpeta Destino 2: " --fselect "$dialogdest2" 45 125)
+      destino3=$(dialog --stdout --title "Seleccionar Carpeta Destino 3: " --fselect "$dialogdest3" 45 125)
+      origen=$(dialog --stdout --title "Ruta Lista (ej. mcid.txt)" --fselect "$dialogorig" 45 65)
+      lowtoupcase=$(sed -i "s/m/M/g" "$origen")
+      exec < "$origen"
+      while read -r line
+      do
+        lct=$(cat "$mallrepos" | grep -iw "$line")
+        lct2=$(grep -Piow "$line+" $mallrepos) # Extráe solo la palabra lct(M####) con -o usando regex de Pearl con -P
+        if [ "$lct2" == "$line" ]; then
+          fuente="${msourcepath}${lct}"		    
+          rsync -ah --info=progress2 --log-file="$rsynclog" "$fuente" "$destino" --dry-run
+          # Destino 2
+          rsync -ah --info=progress2 --log-file="$rsynclog" "$fuente" "$destino2" --dry-run
+          #destino 3
+          rsync -ah --info=progress2 --log-file="$rsynclog" "$fuente" "$destino3" --dry-run
+          copiados=$(echo -e "$line" >> "$copiadoslog")
+          let counterc=counterc+1
+        else
+          fallidos=$(echo -e "\n\n$cliente\n\n$line" >> "$fallidoslog")
+          listfails=$(echo "$line")
+          let counterf=counterf+1
+        fi
+      done
+      let counterrest=counterc-counterf
+      pedido=$(cat "$origen")
+      dialog --title "Copia Finalizada" \
+      --msgbox "\n
+          ============ Rutas ============\n
+      Lista de ID's     ==> $origen\n
+      Folder Destino    ==> $destino\n
+      Folder Destino 2  ==> $destino2\n
+      Folder Destino 3  ==> $destino3\n\n
+          ============ Items ============\n
+                  Reporte\n
+      -------------------------------\n
+      Total Copiados ==> #$counterrest\n
+      total Fallidos ==> #$counterf\n
+      Total Pedidos  ==> #$counterc\n
+      rsync log      ==>"$rsynclog"\n
+      -------------------------------\n\n
+      Items Copiados:\n
+      $pedido\n\n
+      Items Fallidos:\n
+      $listfails\n\n
+          ============ Logs ============\n
+      Log Copiados   ==> $copiadoslog\n
+      Log Fallidos   ==> $fallidoslog\n\n" 0 0
+      exec cat -n "$copiadoslog"
+      ;;
+    5)
+      submenu
+      ;;
+# UPDATE DB's. Note: Write the path msourcepath in mdialog_conf
+        #dialog --title "IMPORTANTE!!!!" \
+        #--msgbox "\nDB Música actualizado.\n\n
+        #    Archivo: $mallrepos\n\n
+        #    
+        #    --- a Ayuda \n\n
+        #    Abrir allrepos con VIM y reemplazar todos los './'\n\n
+        #    Comando VIM\n
+        #    Buscar y Reemplazar     ==> :%s/.\/\n
+        #    Guardar y salir         ==> :wq\n\n
+        #    ---------\n\n
+        #    Otra opción es sed:\n
+        #    $ sed -i 's/\.\///g' allrepos\n
+        #    NOTA: -i sobreescribe el archivo allrepos\n
+        #          sin -i solo imprime
+        #    " 0 0
+  esac
+done

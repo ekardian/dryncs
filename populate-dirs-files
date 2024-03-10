@@ -1,0 +1,113 @@
+#!/bin/bash
+# Script para crear directorios y archivos
+# Ejecute el script dentro de una carpeta vacía, todo el contenido de esta será sobreescrito
+# Ejecute
+# chmod u+x populate-dirs-files
+# ./populate-dirs-files
+
+# Color de salida en terminal
+
+# Amarillo
+oyell="\e[0;33m"
+cyell="\e[0m"
+
+while true; do
+
+echo ""
+echo "======================================================="
+echo -e "ADVERTENCIA!!!!!!\n"
+echo -e "ESTE SCRIPT SOBREESCRIBIRÁ LAS CARPETAS\n"
+echo -e "*Apps\n*Comics\n*Juegos\n*Libros\n*Música\n*Películas\n*Varios\n"
+echo -e "y archivos que lleven el mismo nombre en este script\n"
+echo -e "$oyell USAR CON CUIDADO, VEA EL SCRIPT PARA VERFICAR QUÉ$cyell"
+echo -e "$oyell ARCHIVOS VÁ A SOBREESCRIBIR$cyell"
+echo "======================================================="
+echo ""
+
+echo ""
+read -p "Popular Carpetas y Archivos? Si[S/s] No[N/n]: " sn
+echo ""
+
+case "$sn" in
+  [sS] )
+        # Apps Directorios Contenedores
+
+        mkdir -p Apps/{Codificadores/Codificadores-A{1..2},Graficadores,Utilitarios}
+        touch Apps/Codificadores/Codificadores-A1/cod{1..10}.txt
+        touch Apps/Codificadores/Codificadores-A2/cod{11..20}.txt
+
+        # Comics formato PDF
+
+        mkdir -p Comics/{Ánime,Historia/{Marvell,Wagner}}
+        touch Comics/Ánime/Ánime-C{5..6}.pdf
+        touch Comics/Historia/Marvell/Marvell-C{1..2}.pdf
+        touch Comics/Historia/Wagner/Wagner-C{3..4}.pdf
+
+        # Films Películas Movies formatos mkv mp4
+
+        mkdir -p Películas/{Acción,Terror,'Hechos Reales'}
+        touch Películas/Acción/Acción-F{1..10}.mkv
+        touch Películas/Terror/Terror-F{11..20}.mkv
+        touch Películas/Hechos\ Reales/Hechos\ Reales-F{21..30}.mkv
+
+        # Juegos Directorios Contenedores
+
+        mkdir -p Juegos/{FPS/FPS-J{1..2},Arcade/Arcade-J{3..4}}
+        touch Juegos/FPS/FPS-J1/cod{1..10}.txt
+        touch Juegos/FPS/FPS-J2/cod{11..20}.txt
+        touch Juegos/Arcade/Arcade-J3/cod{21..30}.txt
+        touch Juegos/Arcade/Arcade-J4/cod{31..40}.txt
+
+        # Libros formato pdf
+
+        mkdir -p Libros/{'Best Seller',Novela}
+        touch Libros/Best\ Seller/Best\ Seller-L{1..10}.pdf
+        touch Libros/Novela/Novela-L{11..20}.pdf
+
+        # Música formato mp3
+        mkdir -p Música/{Alabanza/Artist-Álbum-M{1..2},Rock-Alternativo/Artist-Álbum-M{3..4}}
+        touch Música/Alabanza/Artist-Álbum-M1/{a..j}.mp3
+        touch Música/Alabanza/Artist-Álbum-M2/{k..s}.mp3
+        touch Música/Rock-Alternativo/Artist-Álbum-M3/{a..j}.mp3
+        touch Música/Rock-Alternativo/Artist-Álbum-M4/{k..s}.mp3
+        
+        # Varios dirs
+        mkdir -p Varios/{Dir-D1,Dir-D12,Dir-D123,Dir-D1234,Dir-D12345}
+        touch Varios/Dir-D1/file-D{1..10}.mp4
+        touch Varios/Dir-D12/file-D{11..20}.mp4
+        touch Varios/Dir-D123/file-D{21..30}.mp4
+        touch Varios/Dir-D1234/file-D{31..40}.mp4
+        touch Varios/Dir-D12345/file-D{41..50}.mp4
+        
+        #touch Varios/Dir-D1/file-{1..10}.mp4
+        #touch Varios/Dir-D12/file-{11..20}.mp4
+        #touch Varios/Dir-D123/file-{21..30}.mp4
+        #touch Varios/Dir-D1234/file-{31..40}.mp4
+        #touch Varios/Dir-D12345/file-{41..50}.mp4
+
+        echo ""
+        echo "--------------------------------------"
+        echo "Carpetas y Archivos de Ejemplo Creadas"
+        echo "--------------------------------------"
+        echo ""
+        exit
+        ;;
+  [nN] )
+        echo ""
+        echo "---------"
+        echo "CANCELADO"
+        echo "---------"
+        echo ""
+        exit
+        ;;
+     * )
+        echo ""
+        echo "------------------"
+        echo "RESPUESTA INVÁLIDA"
+        echo "------------------"
+        echo ""
+        exit
+        ;;
+esac
+
+done

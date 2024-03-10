@@ -1,0 +1,118 @@
+#!/bin/bash
+# Script para crear directorios y archivos
+# Ejecute el script dentro de una carpeta vacía, todo el contenido de esta será sobreescrito
+# Ejecute
+# chmod u+x populate-dirs-files
+# ./populate-dirs-files
+
+# Color de salida en terminal
+
+# Amarillo
+oyell="\e[0;33m"
+cyell="\e[0m"
+
+while true; do
+
+echo ""
+echo "======================================================="
+echo -e "ADVERTENCIA!!!!!!\n"
+echo -e "CREACIÓN POPULACIÓN CARPETAS DE EJEMPLO ns2"
+echo -e "ESTE ESCRIPT SE DEBE EJECUTAR EN OTRO SERVIDOR DE COLLECTORZ"
+echo -e "QUE NO SEA EL PRINCIPAL: EJEMPLO"
+echo -e "xx.xx.xx.xx -> ns1 el servidor lleno"
+echo -e "xx.xx.xx.xx -> ns2 este script se ejecuta en esta máquina"
+echo -e "ESTE SCRIPT SOBREESCRIBIRÁ LAS CARPETAS\n"
+echo -e "*Apps\n*Comics\n*Juegos\n*Libros\n*Música\n*Películas\n*Varios\n"
+echo -e "y archivos que lleven el mismo nombre en este script\n"
+echo -e "$oyell USAR CON CUIDADO, VEA EL SCRIPT PARA VERFICAR QUÉ$cyell"
+echo -e "$oyell ARCHIVOS VÁ A SOBREESCRIBIR$cyell"
+echo "======================================================="
+echo ""
+
+echo ""
+read -p "Popular Carpetas y Archivos para el REPOSITORIO ns2? Si[S/s] No[N/n]: " sn
+echo ""
+
+case "$sn" in
+  [sS] )
+        # Apps Directorios Contenedores
+
+        mkdir -p Apps/{Codificadores/Codificadores-A{3..4},Graficadores,Utilitarios}
+        touch Apps/Codificadores/Codificadores-A3/cod{21..30}.txt
+        touch Apps/Codificadores/Codificadores-A4/cod{31..40}.txt
+
+        # Comics formato PDF
+
+        mkdir -p Comics/{Ánime,Historia/{Marvell,Wagner}}
+        touch Comics/Ánime/Ánime-C{11..12}.pdf
+        touch Comics/Historia/Marvell/Marvell-C{7..8}.pdf
+        touch Comics/Historia/Wagner/Wagner-C{9..10}.pdf
+
+        # Films Películas Movies formatos mkv mp4
+
+        mkdir -p Películas/{Acción,Terror,'Hechos Reales'}
+        touch Películas/Acción/Acción-F{31..40}.mkv
+        touch Películas/Terror/Terror-F{41..50}.mkv
+        touch Películas/Hechos\ Reales/Hechos\ Reales-F{51..60}.mkv
+
+        # Juegos Directorios Contenedores
+
+        mkdir -p Juegos/{FPS/FPS-J{3..4},Arcade/Arcade-J{5..6}}
+        touch Juegos/FPS/FPS-J3/cod{21..30}.txt
+        touch Juegos/FPS/FPS-J4/cod{31..40}.txt
+        touch Juegos/Arcade/Arcade-J5/cod{41..50}.txt
+        touch Juegos/Arcade/Arcade-J6/cod{51..60}.txt
+
+        # Libros formato pdf
+
+        mkdir -p Libros/{'Best Seller',Novela}
+        touch Libros/Best\ Seller/Best\ Seller-L{21..30}.pdf
+        touch Libros/Novela/Novela-L{31..40}.pdf
+
+        # Música formato mp3
+        mkdir -p Música/{Alabanza/Artist-Álbum-M{5..6},Rock-Alternativo/Artist-Álbum-M{7..8}}
+        touch Música/Alabanza/Artist-Álbum-M5/{a..j}.mp3
+        touch Música/Alabanza/Artist-Álbum-M6/{k..s}.mp3
+        touch Música/Rock-Alternativo/Artist-Álbum-M7/{a..j}.mp3
+        touch Música/Rock-Alternativo/Artist-Álbum-M8/{k..s}.mp3
+        
+        # Varios dirs
+        mkdir -p Varios/{Dir-D6,Dir-D78,Dir-D789,Dir-D78910,Dir-D7891011}
+        touch Varios/Dir-D6/file-D{1..10}.mp4
+        touch Varios/Dir-D78/file-D{11..20}.mp4
+        touch Varios/Dir-D789/file-D{21..30}.mp4
+        touch Varios/Dir-D78910/file-D{31..40}.mp4
+        touch Varios/Dir-D7891011/file-D{41..50}.mp4
+        
+        #touch Varios/Dir-D1/file-{1..10}.mp4
+        #touch Varios/Dir-D12/file-{11..20}.mp4
+        #touch Varios/Dir-D123/file-{21..30}.mp4
+        #touch Varios/Dir-D1234/file-{31..40}.mp4
+        #touch Varios/Dir-D12345/file-{41..50}.mp4
+
+        echo ""
+        echo -e "$oyell----------------------------------------$cyell"
+        echo -e "$oyell Carpetas y Archivos de Ejemplo Creadas$cyell"
+        echo -e "$oyell----------------------------------------$cyell"
+        echo ""
+        exit
+        ;;
+  [nN] )
+        echo ""
+        echo -e "$oyell-----------$cyell"
+        echo -e "$oyell CANCELADO$cyell"
+        echo -e "$oyell-----------$cyell"
+        echo ""
+        exit
+        ;;
+     * )
+        echo ""
+        echo -e "$oyell--------------------$cyell"
+        echo -e "$oyell RESPUESTA INVÁLIDA$cyell"
+        echo -e "$oyell--------------------$cyell"
+        echo ""
+        exit
+        ;;
+esac
+
+done

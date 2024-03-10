@@ -1,0 +1,87 @@
+#!/bin/bash
+#
+# Variable dryncs Config File
+
+# For test this script you can test populating dirs and files with
+# populate-dirs-files
+# populate-dirs-files-ns2
+# just run in console:
+#   chmod a+rw populate-dirs-files populate-dirs-files-ns2
+#   mkdir /test
+#   cd test
+#   ./populate-dirs-files
+#   ./populate-dirs-files-ns2
+
+###############
+#    CONFIG   #
+###############
+
+# if you change the default path, you need
+# create this directories and files manually with the same names
+
+# Target and Source path, you can leave in blank. Other example:
+# if you have samba moint point, this need to be mounted firsth
+# //ip/shared-resource
+# or locally with simple slash /
+# or to the anywhere
+
+# TARGET/DESTINO by default, you can navigate in the dialog program
+# for copy to another target
+
+dialogdest="/"
+
+# dialogorig var. This file content the names
+# of Music dirs/files to copy, example: Copy a Dirs where i have a identifier
+# number like dirM001, dirM002. So you need write this series M001 and M002
+# to the other place like a usb memory, the file name doesn't matter.
+# Just write line by line in a text for example: i-need-copy-this-dirs.txt
+#     M001
+#     M002
+
+# Lista de Pedido. Source path/Ruta Origen.
+# Navigate and choice by example i-need-copy-this-dirs.txt
+
+dialogorig="/"
+
+# Importante!!! ejecute siempre la 'opción 9 Actualizar Base de Datos' cuando
+# haya modificado o aumentado más directorios
+
+mallrepos="mallrepos"
+fallrepos="fallrepos"
+callrepos="callrepos"
+lallrepos="lallrepos"
+jallrepos="jallrepos"
+aallrepos="aallrepos"
+
+# Source path to directories/Files to copy. If you change the source path
+# you need update with 9 option in the program
+#
+# Ejemplo
+# Music Source
+# msourcepath="$HOME/Programs/REPO_MUSICA/"
+#
+# In Cygwin
+# fsourcepath="/cygdrive/unidad/REPO_PELICULAS/"
+#
+# In Linux
+# asourcepath="/path/to/REPO_APPS/"
+
+msourcepath="/"
+fsourcepath="/"
+csourcepath="/"
+lsourcepath="/"
+jsourcepath="/"
+asourcepath="/"
+
+# Logs
+
+# Log susseful Copied
+copiadoslog="copiados.log"
+# Log failed Copied
+fallidoslog="fallidos.log"
+# Log rsync
+rsynclog="dryncs.log"
+
+################
+#  END CONFIG  #
+################
