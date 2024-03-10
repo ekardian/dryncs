@@ -9,7 +9,7 @@ Español\
 Script en bash con rsync y dialog para copiar carpetas con nombres con espacio que coincidan con los listados en un archivo.txt.
 
 ## Requerimientos:
-  - [rsync](https://rsync.samba.org/)(linux/windows cygwin), [dialog](https://linux.die.net/man/1/dialog)(linux/windows cygwin), [lsblk](https://www.geeksforgeeks.org/lsblk-command-in-linux-with-examples/)(linux), [sed](https://www.gnu.org/software/sed/manual/sed.html)(linux/windows cygwin)
+  - [rsync](https://rsync.samba.org/) (linux/windows cygwin), [dialog](https://linux.die.net/man/1/dialog) (linux/windows cygwin), [lsblk](https://www.geeksforgeeks.org/lsblk-command-in-linux-with-examples/)(linux), [sed](https://www.gnu.org/software/sed/manual/sed.html) (linux/windows cygwin)
     ````
     $ sudo apt install rsync
     $ sudo apt install dialog
