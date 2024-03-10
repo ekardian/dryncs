@@ -5,8 +5,9 @@
 #    CONFIGURACIÓN   #
 ######################
 
+# Llenas con las rutas completas a todas las variables
 # DESTINO
-
+#
 dialogdest="$HOME/"
 dialogdest2="$HOME/"
 dialogdest3="$HOME/"
@@ -44,10 +45,15 @@ asourcepath="/"
 # Logs - Estos archivos deben ser creados en las rutas que se listan
 
 # Log Copias Realizadas
+
 copiadoslog="copiados.log"
+
 # Log Copias Fallidas
+
 fallidoslog="fallidos.log"
+
 # Log rsync
+
 rsynclog="dryncs.log"
 
 #######################

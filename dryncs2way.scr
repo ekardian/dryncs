@@ -5,8 +5,12 @@
 #    CONFIGURACIÓN   #
 ######################
 
+# Recuerda llena las variables con las rutas completas
+# Ejemplo /ruta/al/archivo/
 #
 # DESTINO
+# Desde dialog se puede cambiar manualmente el directorio destino
+# o que cambie a este por defecto escribiendo la ruta aquí
 
 dialogdest="$HOME/"
 dialogdest2="$HOME/"
@@ -18,6 +22,8 @@ dialogorig="$HOME/"
 # Estos archivos se deben crear, es donde se volcarán las rutas de los directorios
 # Importante!!! ejecute siempre la 'opción 9 Actualizar Base de Datos' cuando
 # haya modificado o aumentado más directorios
+#
+# Ruta completa, ejemplo /ruta/para/salvar/db/mallrepos
 
 mallrepos="mallrepos"
 fallrepos="fallrepos"
@@ -44,10 +50,15 @@ asourcepath="/"
 # Logs - Estos archivos deben ser creados en las rutas que se listan
 
 # Log Copias Realizadas
+
 copiadoslog="copiados.log"
+
 # Log Copias Fallidas
+
 fallidoslog="fallidos.log"
+
 # Log rsync
+
 rsynclog="dryncs.log"
 
 #######################

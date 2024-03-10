@@ -1,6 +1,8 @@
 #!/bin/bash
 #
 # Variable dryncs Config File
+#
+# Put full path for variables.
 
 # For test this script you can test populating dirs and files with
 # populate-dirs-files
@@ -25,8 +27,8 @@
 # or locally with simple slash /
 # or to the anywhere
 
-# TARGET/DESTINO by default, you can navigate in the dialog program
-# for copy to another target
+# With dialog you can change the target folder, but you can
+# change here with the default target folder if you want.
 
 dialogdest="/"
 
@@ -45,6 +47,8 @@ dialogorig="/"
 
 # Importante!!! ejecute siempre la 'opción 9 Actualizar Base de Datos' cuando
 # haya modificado o aumentado más directorios
+#
+# Fill with full path, example /path/to/mallrepos
 
 mallrepos="mallrepos"
 fallrepos="fallrepos"
@@ -74,12 +78,16 @@ jsourcepath="/"
 asourcepath="/"
 
 # Logs
+# Remember put the full path, example /path/to/copiados.log
 
-# Log susseful Copied
 copiadoslog="copiados.log"
+
 # Log failed Copied
+
 fallidoslog="fallidos.log"
+
 # Log rsync
+
 rsynclog="dryncs.log"
 
 ################
