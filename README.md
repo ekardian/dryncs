@@ -21,9 +21,11 @@ $ cd dryncs.git
 $ chmod 
 $ ./dryncs.git
 ````
+## Ejemplo
+For test and practice you can populate dirs and files with `populate-dirs-files` and `populate-dirs-files-ns2`
 
-  - dryncs.scr
-  Ejemplo: Copiaré solo las carpetas que contengan A123 y A12345, estas dos cadenas que buscaré estarán contenidas en un archivo.txt.
+### Scene
+Copiaré solo las carpetas que contengan A123 y A12345, estas dos cadenas que buscaré estarán contenidas en un archivo.txt.
   Contenido del archivo.txt
     folder-A123
     folder-A12345
