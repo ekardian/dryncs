@@ -23,6 +23,19 @@ $ ./dryncs.scr
 
 # update database of Music, Movies, etc with the option 9
 ````
+
+For Copy Music Folders
+
+Create a file some.txt that will contain what you want to copy, example `M1` or more items, see the populated files.
+
+Run dryncs, navigate with the tab key / arrow key to the target directory selecting with the space bar and pressing Enter.
+
+Select the some.txt navigating with the tab keyboard and arrow keys. Select with space bar. Enter
+
+done.
+
+Check the log files for more information.
+
 ## Ejemplo
 For test and practice you can populate dirs and files with `populate-dirs-files` and `populate-dirs-files-ns2`
 
