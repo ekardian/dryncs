@@ -18,8 +18,10 @@ Script en bash con rsync y dialog para copiar carpetas con nombres con espacio q
 ````
 $ git clone https://github.com/ekardian/dryncs.git
 $ cd dryncs.git
-$ chmod 
-$ ./dryncs.git
+$ chmod a+rx dryncs.scr
+$ ./dryncs.scr
+
+# update database of Music, Movies, etc with the option 9
 ````
 ## Ejemplo
 For test and practice you can populate dirs and files with `populate-dirs-files` and `populate-dirs-files-ns2`
