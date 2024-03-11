@@ -52,7 +52,8 @@ Copiaré solo las carpetas que contengan A123 y A12345, estas dos cadenas que bu
                                    |--- file2
                                    |--- file....
 ````                 
-What do these scripts [script 1](populate-dirs-files)
+What do these scripts [populate-dirs-files](populate-dirs-files) and [populate-dirs-files-ns2](populate-dirs-files-ns2) do
+
 Serialized Folders
 
 ![imagen](https://github.com/ekardian/dryncs/assets/6296036/2057ba43-383c-409f-9930-c9bc9e7c2e7b)
