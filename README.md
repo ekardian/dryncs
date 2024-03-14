@@ -17,7 +17,7 @@ Only working the for music and movies. we are cooking yet.
   M12345\
   M123456\
 
-Steps
+## Steps
 Warning. This gonna rewrite all the files with the same name in the target.
 
 in the firsth execution, update the location of movies and music with the option 9. If you change the location of your files, run again the update with the option 9.
