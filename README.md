@@ -2,6 +2,29 @@
 Copy serialized dirs and files to 1 or 2 o 3 target at the same time - Tested in Linux Mint 21.2, Debian 12\
 Work in [bash](https://www.gnu.org/software/bash/) Linux and [cygwin](https://cygwin.com/) Windows
 
+- For Movies files, example `my-movie-F1234.mkv`, wil conpy only the movie files with the reference `F1234.mkv`.
+  For copy a list of movieS, just write a movie list to copy to anywhere, example write line by line in a file name called mymovies.txt:
+  F1234
+  F12345
+  F123456
+- For Music files, example `(/dirs/my-album-M1234/allmusicfiles*.mp3)`, this will copy the dir and his contain with the reference `M1234`.
+  For copy a list of albums,  just write a music list to copy to anywhere, example write line by line in a file name called mymusic.txt
+  M1234
+  M12345
+  M123456
+
+Steps
+in the firsth execution, update the location of movies and music with the option 9. If you change the location of your files, run the update optino again.
+1. Select the target, USB drive, samba directorie, others.
+2. Select the option for copy Movies or Music.
+3. Select the text file that contain the list for copy.
+
+Check the log files `copiados.log` `fallidos.log` `dryncs.log` for more information about copied files and errors.
+
+
+![imagen](https://github.com/ekardian/dryncs/assets/6296036/06476fd4-ede7-4c2c-abee-23b1990565b0)
+
+
 English\
 Script in bash with rsync and dialog for copy serialized files and directories that contain name spaces listed inside into archive.txt
 
