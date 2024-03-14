@@ -1,9 +1,9 @@
 # dryncs
-Copy serialized dirs and files - Tested in Linux Mint 21.2, Debian 12\
+Copy serialized dirs and files to 1 or 2 o 3 target at the same time - Tested in Linux Mint 21.2, Debian 12\
 Work in [bash](https://www.gnu.org/software/bash/) Linux and [cygwin](https://cygwin.com/) Windows
 
 English\
-Script in bash with rsync and dialog for copy serialized files and directories with references.
+Script in bash with rsync and dialog for copy serialized files and directories that contain name spaces listed inside into archive.txt
 
 Español\
 Script en bash con rsync y dialog para copiar carpetas con nombres con espacio que coincidan con los listados en un archivo.txt.
@@ -18,7 +18,7 @@ Script en bash con rsync y dialog para copiar carpetas con nombres con espacio q
 ````
 $ git clone https://github.com/ekardian/dryncs.git
 $ cd dryncs.git
-$ chmod a+rx dryncs.scr
+$ chmod a+rx dryncs.scr dryncs2way.scr dryncs3way.scr
 $ ./dryncs.scr
 
 # update database of Music, Movies, etc with the option 9
@@ -38,6 +38,12 @@ Check the log files for more information.
 
 ## Ejemplo
 For test and practice you can populate dirs and files with `populate-dirs-files` and `populate-dirs-files-ns2`
+Note. this script rewrite all the dirs and files with the same name.
+````
+$ chmod a+rx populate-dirs-files populate-dirs-files-ns2
+$ ./populate-dirs-files
+$ ./populate-dirs-files-ns2
+````
 
 ### Scene
 Copiaré solo las carpetas que contengan A123 y A12345, estas dos cadenas que buscaré estarán contenidas en un archivo.txt.
