@@ -18,11 +18,12 @@ Only working the for music and movies. we are cooking yet.
   M123456\
 
 Steps
+Warning. This gonna rewrite all the files with the same name in the target.
 in the firsth execution, update the location of movies and music with the option 9. If you change the location of your files, run again the update with the option 9.
 1. Select the option for copy Movies or Music.
 2. Select the target, USB drive, samba directories shared (if need authentication firsth do it from your explorar, then run again dryncs), others.
 3. Select the text file that contain the list for copy. This file can be stored and called from anywahere if you have shared resources in your network with read access. If you need authenticate, do it from your explorar, thhen run again dryncs.
-
+If something going wrong press CTRL+X
 Check the log files `copiados.log` `fallidos.log` `dryncs.log` for more information about copied files and errors.
 
 English\
