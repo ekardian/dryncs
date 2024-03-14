@@ -23,7 +23,7 @@ $ ./dryncs.scr
 
 # update database of Music, Movies, etc with the option 9
 ````
- - `dryncs.scr` for one target, need config variables in `mdialog_conf`. see inside `mdialog_conf`
+ - `dryncs.scr` for one target, need config variables in `mdialog_conf`. See inside `mdialog_conf`
  - `dryncs2way.scr` for two target, need config variables inside `dryncs2way.scr`
  - `dryncs3way.scr` for three target, need config variables inside `dryncs3way.scr`
 
