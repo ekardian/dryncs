@@ -3,15 +3,15 @@ Copy serialized dirs and files to 1 or 2 o 3 target at the same time - Tested in
 Work in [bash](https://www.gnu.org/software/bash/) Linux and [cygwin](https://cygwin.com/) Windows
 
 - For Movies files, example `my-movie-F1234.mkv`, wil conpy only the movie files with the reference `F1234.mkv`.
-  For copy a list of movieS, just write a movie list to copy to anywhere, example write line by line in a file name called mymovies.txt:
-  F1234
-  F12345
-  F123456
+  For copy a list of movieS, just write a movie list to copy to anywhere, example write line by line in a file name called mymovies.txt:\
+  F1234\
+  F12345\
+  F123456\
 - For Music files, example `(/dirs/my-album-M1234/allmusicfiles*.mp3)`, this will copy the dir and his contain with the reference `M1234`.
-  For copy a list of albums,  just write a music list to copy to anywhere, example write line by line in a file name called mymusic.txt
-  M1234
-  M12345
-  M123456
+  For copy a list of albums,  just write a music list to copy to anywhere, example write line by line in a file name called mymusic.txt\
+  M1234\
+  M12345\
+  M123456\
 
 Steps
 in the firsth execution, update the location of movies and music with the option 9. If you change the location of your files, run the update optino again.
