@@ -55,8 +55,6 @@ $ ./dryncs.scr
  - `dryncs3way.scr` for three target, need config variables inside `dryncs3way.scr`
 
 Change the config file `mdialog_conf` for `dryncs.scr`
-for d
-
 
 For Copy Music Folders
 
