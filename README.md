@@ -4,6 +4,8 @@ Work in [bash](https://www.gnu.org/software/bash/) Linux and [cygwin](https://cy
 
 Only working the for music and movies. we are cooking yet.
 
+![imagen](https://github.com/ekardian/dryncs/assets/6296036/06476fd4-ede7-4c2c-abee-23b1990565b0)
+
 - For Movies files, example `my-movie-F1234.mkv`, wil conpy only the movie files with the reference `F1234.mkv`.
   For copy a list of movies, just write a movie list to copy to anywhere, example write line by line in a file name called mymovies.txt:\
   F1234\
@@ -22,10 +24,6 @@ in the firsth execution, update the location of movies and music with the option
 3. Select the text file that contain the list for copy. This file can be stored and called from anywahere if you have shared resources in your network with read access. If you need authenticate, do it from your explorar, thhen run again dryncs.
 
 Check the log files `copiados.log` `fallidos.log` `dryncs.log` for more information about copied files and errors.
-
-
-![imagen](https://github.com/ekardian/dryncs/assets/6296036/06476fd4-ede7-4c2c-abee-23b1990565b0)
-
 
 English\
 Script in bash with rsync and dialog for copy serialized files and directories that contain name spaces listed inside into archive.txt
