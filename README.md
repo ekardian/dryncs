@@ -33,7 +33,7 @@ Script in bash with rsync and dialog for copy serialized files and directories t
 Español\
 Script en bash con rsync y dialog para copiar carpetas con nombres con espacio que coincidan con los listados en un archivo.txt.
 
-## Requerimientos:
+## Requirements:
   - [rsync](https://rsync.samba.org/) (linux/windows cygwin), [dialog](https://linux.die.net/man/1/dialog) (linux/windows cygwin), [lsblk](https://www.geeksforgeeks.org/lsblk-command-in-linux-with-examples/)(linux), [sed](https://www.gnu.org/software/sed/manual/sed.html) (linux/windows cygwin)
     ````
     $ sudo apt install rsync
