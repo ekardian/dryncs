@@ -56,19 +56,7 @@ $ ./dryncs.scr
 
 Change the config file `mdialog_conf` for `dryncs.scr`
 
-For Copy Music Folders
-
-Create a file some.txt that will contain what you want to copy, example `M1` or more items, see the populated files.
-
-Run dryncs, navigate with the tab key / arrow key to the target directory selecting with the space bar and pressing Enter.
-
-Select the some.txt navigating with the tab keyboard and arrow keys. Select with space bar. Enter
-
-done.
-
-Check the log files for more information.
-
-## Ejemplo
+## Example
 For test and practice you can populate dirs and files with `populate-dirs-files` and `populate-dirs-files-ns2`
 Note. this script rewrite all the dirs and files with the same name.
 ````
