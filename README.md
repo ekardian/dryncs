@@ -67,9 +67,9 @@ $ ./populate-dirs-files-ns2
 
 ### Scene
 Copiaré solo las carpetas que contengan A123 y A12345, estas dos cadenas que buscaré estarán contenidas en un archivo.txt.
-  Contenido del archivo.txt
-    folder-A123
-    folder-A12345
+  Contenido del archivo.txt\
+    folder-A123\
+    folder-A12345\
   El script copiará solo las carpetas que coinciden con estos dos cadenas de texto, como se vé abajo
   
 ````  
@@ -85,7 +85,7 @@ Copiaré solo las carpetas que contengan A123 y A12345, estas dos cadenas que bu
                                  |---- folder-Annnn
                                                    |--- file3
                                                    |--- file....
-      Folder-Destino
+      Target Folder
                    |--- folder-A123
                                    |--- file1
                                    |--- file....
