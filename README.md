@@ -2,6 +2,13 @@
 Very Fast!!! Copy serialized dirs and files to 1 or 2 o 3 target at the same time - Tested in Linux Mint 21.2, Debian 12\
 Work in [bash](https://www.gnu.org/software/bash/) Linux and [cygwin](https://cygwin.com/) Windows.
 
+
+English\
+Script in bash with rsync and dialog for copy serialized files and directories that contain name spaces listed inside archive.txt
+
+Español\
+Script en bash con rsync y dialog para copiar carpetas con nombres con espacio que coincidan con los listados en un archivo de texto archivo.txt.
+
 Only working the for music and movies. we are cooking yet.
 
 ![imagen](https://github.com/ekardian/dryncs/assets/6296036/06476fd4-ede7-4c2c-abee-23b1990565b0)
@@ -27,12 +34,6 @@ in the firsth execution, update the location of movies and music with the option
 3. Select the text file that contain the list for copy. This file can be stored and called from anywahere if you have shared resources in your network with read access. If you need authenticate, do it from your explorar, thhen run again dryncs.
 If something going wrong press CTRL+X
 Check the log files `copiados.log` `fallidos.log` `dryncs.log` for more information about copied files and errors.
-
-English\
-Script in bash with rsync and dialog for copy serialized files and directories that contain name spaces listed inside into archive.txt
-
-Español\
-Script en bash con rsync y dialog para copiar carpetas con nombres con espacio que coincidan con los listados en un archivo.txt.
 
 ## Requirements:
   - [rsync](https://rsync.samba.org/) (linux/windows cygwin), [dialog](https://linux.die.net/man/1/dialog) (linux/windows cygwin), [lsblk](https://www.geeksforgeeks.org/lsblk-command-in-linux-with-examples/)(linux), [sed](https://www.gnu.org/software/sed/manual/sed.html) (linux/windows cygwin)
