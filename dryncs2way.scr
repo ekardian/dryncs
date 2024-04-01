@@ -196,9 +196,11 @@ while true; do
         lct2=$(grep -Piow "$line+" $fallrepos) # Extráe solo la palabra lct(M####) con -o usando regex de Pearl con -P
         if [ "$lct2" == "$line" ]; then
           fuente="${fsourcepath}${lct}"
-          rsync -ah --info=progress2 --log-file="$rsynclog" "$fuente" "$destino" --dry-run
+# Add --dry-run al final de la siguiente línea para hacer una simulación, esto no copiará ningún archivo
+          rsync -ah --info=progress2 --log-file="$rsynclog" "$fuente" "$destino"
           #destino 2
-          rsync -ah --info=progress2 --log-file="$rsynclog" "$fuente" "$destino2" --dry-run
+# Add --dry-run al final de la siguiente línea para hacer una simulación, esto no copiará ningún archivo
+          rsync -ah --info=progress2 --log-file="$rsynclog" "$fuente" "$destino2"
           copiados=$(echo -e "$line" >> "$copiadoslog")
           let counterc=counterc+1
         else
@@ -249,9 +251,11 @@ while true; do
         lct2=$(grep -Piow "$line+" $mallrepos) # Extráe solo la palabra lct(M####) con -o usando regex de Pearl con -P
         if [ "$lct2" == "$line" ]; then
           fuente="${msourcepath}${lct}"		    
-          rsync -ah --info=progress2 --log-file="$rsynclog" "$fuente" "$destino" --dry-run
+# Add --dry-run al final de la siguiente línea para hacer una simulación, esto no copiará ningún archivo
+          rsync -ah --info=progress2 --log-file="$rsynclog" "$fuente" "$destino"
           # Destino 2
-          rsync -ah --info=progress2 --log-file="$rsynclog" "$fuente" "$destino2" --dry-run
+# Add --dry-run al final de la siguiente línea para hacer una simulación, esto no copiará ningún archivo
+          rsync -ah --info=progress2 --log-file="$rsynclog" "$fuente" "$destino2"
           copiados=$(echo -e "$line" >> "$copiadoslog")
           let counterc=counterc+1
         else
