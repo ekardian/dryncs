@@ -183,13 +183,13 @@ while true; do
       destino=$(dialog --stdout --title "Seleccionar Carpeta Destino:" --fselect "$dialogdest" 45 125)
       destino2=$(dialog --stdout --title "Seleccionar CArpeta Destino 2: " --fselect "$dialogdest2" 45 125)
       destino3=$(dialog --stdout --title "Seleccionar CArpeta Destino 3: " --fselect "$dialogdest3" 45 125)
-      origen=$(dialog --stdout --title "Ruta Lista (ej. mcid.txt)" --fselect "$dialogorig" 45 65)
+      origen=$(dialog --stdout --title "Ruta Lista (ej. fcid.txt)" --fselect "$dialogorig" 45 65)
       lowtoupcase=$(sed -i "s/f/F/g" "$origen")
       exec < "$origen"
       while read -r line
       do
-        lct=$(cat "$fallrepos" | grep -iw "$line")
-        lct2=$(grep -Piow "$line+" $fallrepos) # Extráe solo la palabra lct(M####) con -o usando regex de Pearl con -P
+        lct=$(cat "$fallrepos" | grep -iwm 1 "$line")
+        lct2=$(grep -Piowm 1 "$line+" $fallrepos) # Extráe solo la palabra lct(F####)
         if [ "$lct2" == "$line" ]; then
           fuente="${fsourcepath}${lct}"
 # Add --dry-run al final de la siguiente línea para hacer una simulación, esto no copiará ningún archivo
@@ -248,8 +248,8 @@ while true; do
       exec < "$origen"
       while read -r line
       do
-        lct=$(cat "$mallrepos" | grep -iw "$line")
-        lct2=$(grep -Piow "$line+" $mallrepos) # Extráe solo la palabra lct(M####) con -o usando regex de Pearl con -P
+        lct=$(cat "$mallrepos" | grep -iwm 1 "$line")
+        lct2=$(grep -Piowm 1 "$line+" $mallrepos) # Extráe solo la palabra lct(M####)
         if [ "$lct2" == "$line" ]; then
           fuente="${msourcepath}${lct}"
 # Add --dry-run al final de la siguiente línea para hacer una simulación, esto no copiará ningún archivo
