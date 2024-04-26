@@ -102,16 +102,60 @@ fsourcepath")
               fi
               ;;
           "Juegos")
-              echo ""
+              if [ -f "$jallrepos" -a -d "$jsourcepath" ]; then
+                cd "$jsourcepath"
+                find . -type d > "$jallrepos"
+                sed -i 's/\.\///g' "$jallrepos"
+                result=$(echo "DB Apps jallrepos Updated - Base de datos de Juegos Actualizada")
+                display_result "INFORME"
+              else
+                result=$(echo "Falló Actualización de jallrepos, revise la configuración mdialog_conf")
+                display_result "INFORME DB JUEGOS"
+              fi
               ;;
           "Apps")
-              echo ""
+              if [ -f "$aallrepos" -a -d "$asourcepath" ]; then
+                cd "$asourcepath"
+                find . -type d > "$aallrepos"
+                sed -i 's/\.\///g' "$aallrepos"
+                result=$(echo "DB Apps aallrepos Updated - Base de datos de Apps Actualizada")
+                display_result "INFORME"
+              else
+                result=$(echo "Falló Actualización de aallrepos, revise la configuración mdialog_conf")
+                display_result "INFORME DB APPS"
+              fi
               ;;
           "Libros")
-              echo ""
+              if [ -f $lallrepos -a -d "$lsourcepath" ] ; then
+                cd "$lsourcepath"
+                find . -type f > "$lallrepos"
+                sed -i 's/\.\///g' "$lallrepos"
+                result=$(echo "DB Películas lallrepos Updated - Base de datos de los Libros Actualizado")
+                display_result "INFORME"
+              else
+                result=$(echo "Falló Actualización de los Libros,\n
+revise la configuración de mdialog_conf\n
+y las variables:\n
+lallrepos\n
+lsourcepath")
+                display_result "INFORME DB LIBROS"
+              fi
               ;;
           "Comics")
-              echo ""
+              if [ -f $callrepos -a -d "$csourcepath" ] ; then
+                cd "$csourcepath"
+                find . -type f > "$callrepos"
+                sed -i 's/\.\///g' "$callrepos"
+                result=$(echo "DB Películas callrepos Updated - Base de datos de Comics Actualizado")
+                display_result "INFORME"
+              else
+                result=$(echo "Falló Actualización de los Comics,\n
+revise la configuración de mdialog_conf\n
+y las variables:\n
+callrepos\n
+csourcepath")
+                display_result "INFORME DB COMICS"
+              fi
               ;;
           "Volver")
               return
@@ -187,13 +231,13 @@ while true; do
       logcopy=$(echo -e "\n\n$cliente - $regdate\n\n" >> "$copiadoslog")
       destino=$(dialog --stdout --title "Seleccionar Carpeta Destino:" --fselect "$dialogdest" 45 125)
       destino2=$(dialog --stdout --title "Seleccionar CArpeta Destino 2: " --fselect "$dialogdest2" 45 125)
-      origen=$(dialog --stdout --title "Ruta Lista (ej. mcid.txt)" --fselect "$dialogorig" 45 65)
+      origen=$(dialog --stdout --title "Ruta Lista (ej. fcid.txt)" --fselect "$dialogorig" 45 65)
       lowtoupcase=$(sed -i "s/f/F/g" "$origen")
       exec < "$origen"
       while read -r line
       do
-        lct=$(cat "$fallrepos" | grep -iw "$line")
-        lct2=$(grep -Piow "$line+" $fallrepos) # Extráe solo la palabra lct(M####) con -o usando regex de Pearl con -P
+        lct=$(cat "$fallrepos" | grep -iwm 1 "$line")
+        lct2=$(grep -Piowm 1 "$line+" $fallrepos) # Extráe solo la palabra lct(F####)
         if [ "$lct2" == "$line" ]; then
           fuente="${fsourcepath}${lct}"
 # Add --dry-run al final de la siguiente línea para hacer una simulación, esto no copiará ningún archivo
@@ -247,8 +291,8 @@ while true; do
       exec < "$origen"
       while read -r line
       do
-        lct=$(cat "$mallrepos" | grep -iw "$line")
-        lct2=$(grep -Piow "$line+" $mallrepos) # Extráe solo la palabra lct(M####) con -o usando regex de Pearl con -P
+        lct=$(cat "$mallrepos" | grep -iwm 1 "$line")
+        lct2=$(grep -Piowm 1 "$line+" $mallrepos) # Extráe solo la palabra lct(M####) con -o usando regex de Pearl con -P
         if [ "$lct2" == "$line" ]; then
           fuente="${msourcepath}${lct}"		    
 # Add --dry-run al final de la siguiente línea para hacer una simulación, esto no copiará ningún archivo
