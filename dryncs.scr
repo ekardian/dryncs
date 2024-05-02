@@ -248,9 +248,12 @@ while true; do
         lct=$(cat "$mallrepos" | grep -iwm 1 "$line")
         lct2=$(grep -Piowm 1 "$line+" $mallrepos) # Extráe solo la palabra lct(M####) con -o usando regex de Pearl con -P, -m 1 para que imprima la primera coincidencia y no replique los repetidos en el archivo mallrepos
         if [ "$lct2" == "$line" ]; then
-          fuente="${msourcepath}${lct}"
-# Add --dry-run al final de la siguiente línea para hacer una simulación, esto no copiará ningún archivo
-          rsync -ah --info=progress2 --log-file="$rsynclog" "$fuente" "$destino"
+# rsync copying with full path or without full path. read man rsync --relative, -R section for understand the "./" bettwen "${msourcepath} and ${lct}"
+#		      fuente="${msourcepath}${lct}"
+#         rsync -ah --info=progress2 --log-file="$rsynclog" "$fuente" "$destino"
+# For copy without full path uncomment the 2 lines above and comment the 2 lines below, For replicate the structure of directories, require $destino variable of dialog like, /path/to/REPO_TARGET/, or define in the mdialog_conf, variable section dialogdest="/path/to/REPO_TARJET/" with the slash at the end "/"
+		      fuente="${msourcepath}./${lct}"
+		      rsync -ahR --info=progress2 --log-file="$rsynclog" "$fuente" "$destino"
           copiados=$(echo -e "$line" >> "$copiadoslog")
           let counterc=counterc+1
         else
