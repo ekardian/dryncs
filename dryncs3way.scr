@@ -191,15 +191,18 @@ while true; do
         lct=$(cat "$fallrepos" | grep -iwm 1 "$line")
         lct2=$(grep -Piowm 1 "$line+" $fallrepos) # Extráe solo la palabra lct(F####)
         if [ "$lct2" == "$line" ]; then
-          fuente="${fsourcepath}${lct}"
-# Add --dry-run al final de la siguiente línea para hacer una simulación, esto no copiará ningún archivo
-          rsync -ah --info=progress2 --log-file="$rsynclog" "$fuente" "$destino"
+# rsync copying with full path or without full path. read man rsync --relative, -R section for understand the "./" bettwen "${msourcepath} and ${lct}"
+#		      fuente="${msourcepath}${lct}"
+#         rsync -ah --info=progress2 --log-file="$rsynclog" "$fuente" "$destino"
+#         rsync -ah --info=progress2 --log-file="$rsynclog" "$fuente" "$destino2"
+#         rsync -ah --info=progress2 --log-file="$rsynclog" "$fuente" "$destino3"
+# For copy without full path uncomment the lines above and comment the 4 lines below, For replicate the structure of directories, require $destino variable of dialog like, /path/to/REPO_TARGET/, or define in the mdialog_conf, variable section dialogdest="/path/to/REPO_TARJET/" with the slash at the end "/"
+          fuente="${fsourcepath}./${lct}"
+          rsync -ahR --info=progress2 --log-file="$rsynclog" "$fuente" "$destino"
           #destino 2
-# Add --dry-run al final de la siguiente línea para hacer una simulación, esto no copiará ningún archivo
-          rsync -ah --info=progress2 --log-file="$rsynclog" "$fuente" "$destino2"
+          rsync -ahR --info=progress2 --log-file="$rsynclog" "$fuente" "$destino2"
           #destino 3
-# Add --dry-run al final de la siguiente línea para hacer una simulación, esto no copiará ningún archivo
-          rsync -ah --info=progress2 --log-file="$rsynclog" "$fuente" "$destino3"
+          rsync -ahR --info=progress2 --log-file="$rsynclog" "$fuente" "$destino3"
           copiados=$(echo -e "$line" >> "$copiadoslog")
           let counterc=counterc+1
         else
@@ -251,15 +254,18 @@ while true; do
         lct=$(cat "$mallrepos" | grep -iwm 1 "$line")
         lct2=$(grep -Piowm 1 "$line+" $mallrepos) # Extráe solo la palabra lct(M####)
         if [ "$lct2" == "$line" ]; then
-          fuente="${msourcepath}${lct}"
-# Add --dry-run al final de la siguiente línea para hacer una simulación, esto no copiará ningún archivo
-          rsync -ah --info=progress2 --log-file="$rsynclog" "$fuente" "$destino"
+# rsync copying with full path or without full path. read man rsync --relative, -R section for understand the "./" bettwen "${msourcepath} and ${lct}"
+#		      fuente="${msourcepath}${lct}"
+#         rsync -ah --info=progress2 --log-file="$rsynclog" "$fuente" "$destino"
+#         rsync -ah --info=progress2 --log-file="$rsynclog" "$fuente" "$destino2"
+#         rsync -ah --info=progress2 --log-file="$rsynclog" "$fuente" "$destino3"
+# For copy without full path uncomment the lines above and comment the 4 lines below, For replicate the structure of directories, require $destino variable of dialog like, /path/to/REPO_TARGET/, or define in the mdialog_conf, variable section dialogdest="/path/to/REPO_TARJET/" with the slash at the end "/"
+          fuente="${msourcepath}./${lct}"
+          rsync -ahR --info=progress2 --log-file="$rsynclog" "$fuente" "$destino"
           # Destino 2
-# Add --dry-run al final de la siguiente línea para hacer una simulación, esto no copiará ningún archivo
-          rsync -ah --info=progress2 --log-file="$rsynclog" "$fuente" "$destino2"
+          rsync -ahR --info=progress2 --log-file="$rsynclog" "$fuente" "$destino2"
           #destino 3
-# Add --dry-run al final de la siguiente línea para hacer una simulación, esto no copiará ningún archivo
-          rsync -ah --info=progress2 --log-file="$rsynclog" "$fuente" "$destino3"
+          rsync -ahR --info=progress2 --log-file="$rsynclog" "$fuente" "$destino3"
           copiados=$(echo -e "$line" >> "$copiadoslog")
           let counterc=counterc+1
         else
