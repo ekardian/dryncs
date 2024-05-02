@@ -198,9 +198,12 @@ while true; do
         lct=$(cat "$fallrepos" | grep -iwm 1 "$line")
         lct2=$(grep -Piowm 1 "$line+" $fallrepos) # Extráe solo la palabra lct(F####) con -o usando regex de Pearl con -P, -m 1 para que imprima la primera coincidencia y no replique los repetidos en el archivo fallrepos
         if [ "$lct2" == "$line" ]; then
-          fuente="${fsourcepath}${lct}"
-# Add --dry-run al final de la siguiente línea para hacer una simulación, esto no copiará ningún archivo
-          rsync -ah --info=progress2 --log-file="$rsynclog" "$fuente" "$destino"
+# rsync copying with full path or without full path. read man rsync --relative, -R section for understand the "./" bettwen "${msourcepath} and ${lct}"
+#	  fuente="${msourcepath}${lct}"
+#         rsync -ah --info=progress2 --log-file="$rsynclog" "$fuente" "$destino"
+# For copy without full path uncomment the 2 lines above and comment the 2 lines below, For replicate the structure of directories, require $destino variable of dialog like, /path/to/REPO_TARGET/, or define in the mdialog_conf, variable section dialogdest="/path/to/REPO_TARJET/" with the slash at the end "/"
+          fuente="${fsourcepath}./${lct}"
+          rsync -ahR --info=progress2 --log-file="$rsynclog" "$fuente" "$destino"
           copiados=$(echo -e "$line" >> "$copiadoslog")
           let counterc=counterc+1
         else
@@ -249,11 +252,11 @@ while true; do
         lct2=$(grep -Piowm 1 "$line+" $mallrepos) # Extráe solo la palabra lct(M####) con -o usando regex de Pearl con -P, -m 1 para que imprima la primera coincidencia y no replique los repetidos en el archivo mallrepos
         if [ "$lct2" == "$line" ]; then
 # rsync copying with full path or without full path. read man rsync --relative, -R section for understand the "./" bettwen "${msourcepath} and ${lct}"
-#		      fuente="${msourcepath}${lct}"
+#	  fuente="${msourcepath}${lct}"
 #         rsync -ah --info=progress2 --log-file="$rsynclog" "$fuente" "$destino"
 # For copy without full path uncomment the 2 lines above and comment the 2 lines below, For replicate the structure of directories, require $destino variable of dialog like, /path/to/REPO_TARGET/, or define in the mdialog_conf, variable section dialogdest="/path/to/REPO_TARJET/" with the slash at the end "/"
-		      fuente="${msourcepath}./${lct}"
-		      rsync -ahR --info=progress2 --log-file="$rsynclog" "$fuente" "$destino"
+	  fuente="${msourcepath}./${lct}"
+	  rsync -ahR --info=progress2 --log-file="$rsynclog" "$fuente" "$destino"
           copiados=$(echo -e "$line" >> "$copiadoslog")
           let counterc=counterc+1
         else
@@ -302,9 +305,12 @@ while true; do
         lct=$(cat "$jallrepos" | grep -iwm 1 "$line")
         lct2=$(grep -Piowm 1 "$line+" $jallrepos) # Extráe solo la palabra lct(J####) con -o usando regex de Pearl con -P, -m 1 para que imprima la primera coincidencia y no replique los repetidos en el archivo jallrepos
         if [ "$lct2" == "$line" ]; then
-          fuente="${jsourcepath}${lct}"
-# Add --dry-run al final de la siguiente línea para hacer una simulación, esto no copiará ningún archivo
-          rsync -ah --info=progress2 --log-file="$rsynclog" "$fuente" "$destino"
+# rsync copying with full path or without full path. read man rsync --relative, -R section for understand the "./" bettwen "${msourcepath} and ${lct}"
+#         fuente="${msourcepath}${lct}"
+#         rsync -ah --info=progress2 --log-file="$rsynclog" "$fuente" "$destino"
+# For copy without full path uncomment the 2 lines above and comment the 2 lines below, For replicate the structure of directories, require $destino variable of dialog like, /path/to/REPO_TARGET/, or define in the mdialog_conf, variable section dialogdest="/path/to/REPO_TARJET/" with the slash at the end "/"
+          fuente="${jsourcepath}./${lct}"
+          rsync -ahR --info=progress2 --log-file="$rsynclog" "$fuente" "$destino"
           copiados=$(echo -e "$line" >> "$copiadoslog")
           let counterc=counterc+1
         else
@@ -353,9 +359,12 @@ while true; do
         lct=$(cat "$aallrepos" | grep -iwm 1 "$line")
         lct2=$(grep -Piowm 1 "$line+" $aallrepos) # Extráe solo la palabra lct(A####) con -o usando regex de Pearl con -P, -m 1 para que imprima la primera coincidencia y no replique los repetidos en el archivo aallrepos
         if [ "$lct2" == "$line" ]; then
-          fuente="${asourcepath}${lct}"
-# Add --dry-run al final de la siguiente línea para hacer una simulación, esto no copiará ningún archivo
-          rsync -ah --info=progress2 --log-file="$rsynclog" "$fuente" "$destino"
+# rsync copying with full path or without full path. read man rsync --relative, -R section for understand the "./" bettwen "${msourcepath} and ${lct}"
+#         fuente="${msourcepath}${lct}"
+#         rsync -ah --info=progress2 --log-file="$rsynclog" "$fuente" "$destino"
+# For copy without full path uncomment the 2 lines above and comment the 2 lines below, For replicate the structure of directories, require $destino variable of dialog like, /path/to/REPO_TARGET/, or define in the mdialog_conf, variable section dialogdest="/path/to/REPO_TARJET/" with the slash at the end "/"
+          fuente="${asourcepath}./${lct}"
+          rsync -ahR --info=progress2 --log-file="$rsynclog" "$fuente" "$destino"
           copiados=$(echo -e "$line" >> "$copiadoslog")
           let counterc=counterc+1
         else
@@ -404,9 +413,12 @@ while true; do
         lct=$(cat "$lallrepos" | grep -iwm 1 "$line")
         lct2=$(grep -Piowm 1 "$line+" $lallrepos) # Extráe solo la palabra lct(L####) con -o usando regex de Pearl con -P, -m 1 para que imprima la primera coincidencia y no replique los repetidos en el archivo lallrepos
         if [ "$lct2" == "$line" ]; then
-          fuente="${lsourcepath}${lct}"
-# Add --dry-run al final de la siguiente línea para hacer una simulación, esto no copiará ningún archivo
-          rsync -ah --info=progress2 --log-file="$rsynclog" "$fuente" "$destino"
+# rsync copying with full path or without full path. read man rsync --relative, -R section for understand the "./" bettwen "${msourcepath} and ${lct}"
+#         fuente="${msourcepath}${lct}"
+#         rsync -ah --info=progress2 --log-file="$rsynclog" "$fuente" "$destino"
+# For copy without full path uncomment the 2 lines above and comment the 2 lines below, For replicate the structure of directories, require $destino variable of dialog like, /path/to/REPO_TARGET/, or define in the mdialog_conf, variable section dialogdest="/path/to/REPO_TARJET/" with the slash at the end "/"
+          fuente="${lsourcepath}./${lct}"
+          rsync -ahR --info=progress2 --log-file="$rsynclog" "$fuente" "$destino"
           copiados=$(echo -e "$line" >> "$copiadoslog")
           let counterc=counterc+1
         else
@@ -454,9 +466,12 @@ while true; do
         lct=$(cat "$callrepos" | grep -iwm 1 "$line")
         lct2=$(grep -Piowm 1 "$line+" $callrepos) # Extráe solo la palabra lct(C####) con -o usando regex de Pearl con -P, -m 1 para que imprima la primera coincidencia y no replique los repetidos en el archivo callrepos
         if [ "$lct2" == "$line" ]; then
-          fuente="${csourcepath}${lct}"
-# Add --dry-run al final de la siguiente línea para hacer una simulación, esto no copiará ningún archivo
-          rsync -ah --info=progress2 --log-file="$rsynclog" "$fuente" "$destino"
+# rsync copying with full path or without full path. read man rsync --relative, -R section for understand the "./" bettwen "${msourcepath} and ${lct}"
+#         fuente="${msourcepath}${lct}"
+#         rsync -ah --info=progress2 --log-file="$rsynclog" "$fuente" "$destino"
+# For copy without full path uncomment the 2 lines above and comment the 2 lines below, For replicate the structure of directories, require $destino variable of dialog like, /path/to/REPO_TARGET/, or define in the mdialog_conf, variable section dialogdest="/path/to/REPO_TARJET/" with the slash at the end "/"
+          fuente="${csourcepath}./${lct}"
+          rsync -ahR --info=progress2 --log-file="$rsynclog" "$fuente" "$destino"
           copiados=$(echo -e "$line" >> "$copiadoslog")
           let counterc=counterc+1
         else
