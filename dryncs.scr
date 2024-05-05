@@ -199,7 +199,7 @@ while true; do
         lct2=$(grep -Piowm 1 "$line+" $fallrepos) # Extráe solo la palabra lct(F####) con -o usando regex de Pearl con -P, -m 1 para que imprima la primera coincidencia y no replique los repetidos en el archivo fallrepos
         if [ "$lct2" == "$line" ]; then
 # rsync copying with full path or without full path. read man rsync --relative, -R section for understand the "./" bettwen "${msourcepath} and ${lct}"
-#	  fuente="${msourcepath}${lct}"
+#	  fuente="${fsourcepath}${lct}"
 #         rsync -ah --info=progress2 --log-file="$rsynclog" "$fuente" "$destino"
 # For copy without full path uncomment the 2 lines above and comment the 2 lines below, For replicate the structure of directories, require $destino variable of dialog like, /path/to/REPO_TARGET/, or define in the mdialog_conf, variable section dialogdest="/path/to/REPO_TARJET/" with the slash at the end "/"
           fuente="${fsourcepath}./${lct}"
@@ -306,7 +306,7 @@ while true; do
         lct2=$(grep -Piowm 1 "$line+" $jallrepos) # Extráe solo la palabra lct(J####) con -o usando regex de Pearl con -P, -m 1 para que imprima la primera coincidencia y no replique los repetidos en el archivo jallrepos
         if [ "$lct2" == "$line" ]; then
 # rsync copying with full path or without full path. read man rsync --relative, -R section for understand the "./" bettwen "${msourcepath} and ${lct}"
-#         fuente="${msourcepath}${lct}"
+#         fuente="${jsourcepath}${lct}"
 #         rsync -ah --info=progress2 --log-file="$rsynclog" "$fuente" "$destino"
 # For copy without full path uncomment the 2 lines above and comment the 2 lines below, For replicate the structure of directories, require $destino variable of dialog like, /path/to/REPO_TARGET/, or define in the mdialog_conf, variable section dialogdest="/path/to/REPO_TARJET/" with the slash at the end "/"
           fuente="${jsourcepath}./${lct}"
@@ -360,7 +360,7 @@ while true; do
         lct2=$(grep -Piowm 1 "$line+" $aallrepos) # Extráe solo la palabra lct(A####) con -o usando regex de Pearl con -P, -m 1 para que imprima la primera coincidencia y no replique los repetidos en el archivo aallrepos
         if [ "$lct2" == "$line" ]; then
 # rsync copying with full path or without full path. read man rsync --relative, -R section for understand the "./" bettwen "${msourcepath} and ${lct}"
-#         fuente="${msourcepath}${lct}"
+#         fuente="${asourcepath}${lct}"
 #         rsync -ah --info=progress2 --log-file="$rsynclog" "$fuente" "$destino"
 # For copy without full path uncomment the 2 lines above and comment the 2 lines below, For replicate the structure of directories, require $destino variable of dialog like, /path/to/REPO_TARGET/, or define in the mdialog_conf, variable section dialogdest="/path/to/REPO_TARJET/" with the slash at the end "/"
           fuente="${asourcepath}./${lct}"
@@ -414,7 +414,7 @@ while true; do
         lct2=$(grep -Piowm 1 "$line+" $lallrepos) # Extráe solo la palabra lct(L####) con -o usando regex de Pearl con -P, -m 1 para que imprima la primera coincidencia y no replique los repetidos en el archivo lallrepos
         if [ "$lct2" == "$line" ]; then
 # rsync copying with full path or without full path. read man rsync --relative, -R section for understand the "./" bettwen "${msourcepath} and ${lct}"
-#         fuente="${msourcepath}${lct}"
+#         fuente="${lsourcepath}${lct}"
 #         rsync -ah --info=progress2 --log-file="$rsynclog" "$fuente" "$destino"
 # For copy without full path uncomment the 2 lines above and comment the 2 lines below, For replicate the structure of directories, require $destino variable of dialog like, /path/to/REPO_TARGET/, or define in the mdialog_conf, variable section dialogdest="/path/to/REPO_TARJET/" with the slash at the end "/"
           fuente="${lsourcepath}./${lct}"
@@ -467,7 +467,7 @@ while true; do
         lct2=$(grep -Piowm 1 "$line+" $callrepos) # Extráe solo la palabra lct(C####) con -o usando regex de Pearl con -P, -m 1 para que imprima la primera coincidencia y no replique los repetidos en el archivo callrepos
         if [ "$lct2" == "$line" ]; then
 # rsync copying with full path or without full path. read man rsync --relative, -R section for understand the "./" bettwen "${msourcepath} and ${lct}"
-#         fuente="${msourcepath}${lct}"
+#         fuente="${csourcepath}${lct}"
 #         rsync -ah --info=progress2 --log-file="$rsynclog" "$fuente" "$destino"
 # For copy without full path uncomment the 2 lines above and comment the 2 lines below, For replicate the structure of directories, require $destino variable of dialog like, /path/to/REPO_TARGET/, or define in the mdialog_conf, variable section dialogdest="/path/to/REPO_TARJET/" with the slash at the end "/"
           fuente="${csourcepath}./${lct}"
