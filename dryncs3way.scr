@@ -192,7 +192,7 @@ while true; do
         lct2=$(grep -Piowm 1 "$line+" $fallrepos) # Extráe solo la palabra lct(F####)
         if [ "$lct2" == "$line" ]; then
 # rsync copying with full path or without full path. read man rsync --relative, -R section for understand the "./" bettwen "${msourcepath} and ${lct}"
-#		      fuente="${msourcepath}${lct}"
+#		      fuente="${fsourcepath}${lct}"
 #         rsync -ah --info=progress2 --log-file="$rsynclog" "$fuente" "$destino"
 #         rsync -ah --info=progress2 --log-file="$rsynclog" "$fuente" "$destino2"
 #         rsync -ah --info=progress2 --log-file="$rsynclog" "$fuente" "$destino3"
