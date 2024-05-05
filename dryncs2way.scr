@@ -240,7 +240,7 @@ while true; do
         lct2=$(grep -Piowm 1 "$line+" $fallrepos) # Extráe solo la palabra lct(F####)
         if [ "$lct2" == "$line" ]; then
 # rsync copying with full path or without full path. read man rsync --relative, -R section for understand the "./" bettwen "${msourcepath} and ${lct}"
-#		      fuente="${msourcepath}${lct}"
+#		      fuente="${fsourcepath}${lct}"
 #         rsync -ah --info=progress2 --log-file="$rsynclog" "$fuente" "$destino"
 #         rsync -ah --info=progress2 --log-file="$rsynclog" "$fuente" "$destino2"
 # For copy without full path uncomment the lines above and comment the 3 lines below, For replicate the structure of directories, require $destino variable of dialog like, /path/to/REPO_TARGET/, or define in the mdialog_conf, variable section dialogdest="/path/to/REPO_TARJET/" with the slash at the end "/"
