@@ -1,4 +1,6 @@
 # dryncs
+Copy from 1 source to 1 or 2-3 targets(dryncs2way and dryncs3way), for copy from 3 source to 1 target use dryncsnsx.
+
 Very Fast!!! Copy serialized dirs and files to 1 or 2 o 3 target at the same time - Tested in Linux Mint 21.2, Debian 12.\
 In the code you can comment/Uncomment the lines for copy files/dirs with or without the full path source. Read the guide in the commented lines in the source.\
 Work in [bash](https://www.gnu.org/software/bash/) Linux and [cygwin](https://cygwin.com/) Windows.
