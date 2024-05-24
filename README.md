@@ -106,3 +106,12 @@ Serialized Files
 
 ![imagen](https://github.com/ekardian/dryncs/assets/6296036/854cd0b7-5860-44f1-8ca3-44cdfd7b81ed)
 
+DONATION
+--------
+Te sirvió algún script? genial!!!  Sin compromisos me podrías invitar un tecito enviándome una donación (5$ dólares americanos) por Western Union a:
+Works for you? grate!!!! Can u give me a dontaion, i need a lot of coffe and tea for work XD, thanks
+
+- Nombre: Erwin Marcell Alayn
+- Apellidos: Castedo Plantarrosa
+- Destino/Ciudad: Yacuiba, Departamento de Tarija, Bolivia
+- Notifìcame al Correo electrónico: blkid@protonmail.com
