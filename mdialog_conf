@@ -18,6 +18,8 @@
 #    CONFIG   #
 ###############
 
+# Origin/Target Paths for copy
+#
 # if you change the default path, you need
 # create this directories and files manually with the same names
 
@@ -30,7 +32,9 @@
 # With dialog you can change the target folder, but you can
 # change here with the default target folder if you want.
 
-dialogdest="/"
+dialogdest="$HOME/"
+dialogdest2="$HOME/"
+dialogdest3="$HOME/"
 
 # dialogorig var. This file content the names
 # of Music dirs/files to copy, example: Copy a Dirs where i have a identifier
@@ -43,20 +47,24 @@ dialogdest="/"
 # Lista de Pedido. Source path/Ruta Origen.
 # Navigate and choice by example i-need-copy-this-dirs.txt
 
-dialogorig="/"
+dialogorig="/path/to/dryncs.git/"
 
+# DATABASE PATHs
+# 
 # Importante!!! ejecute siempre la 'opción 9 Actualizar Base de Datos' cuando
 # haya modificado o aumentado más directorios
 #
 # Fill with full path, example /path/to/mallrepos
 
-mallrepos="mallrepos"
-fallrepos="fallrepos"
-callrepos="callrepos"
-lallrepos="lallrepos"
-jallrepos="jallrepos"
-aallrepos="aallrepos"
+mallrepos="/path/to/dryncs.git/mallrepos"
+fallrepos="/path/to/dryncs.git/fallrepos"
+callrepos="/path/to/dryncs.git/callrepos"
+lallrepos="/path/to/dryncs.git/lallrepos"
+jallrepos="/path/to/dryncs.git/jallrepos"
+aallrepos="/path/to/dryncs.git/aallrepos"
 
+# REPOSITORY PATH
+#
 # Source path to directories/Files to copy. If you change the source path
 # you need update with 9 option in the program
 #
@@ -70,25 +78,26 @@ aallrepos="aallrepos"
 # In Linux
 # asourcepath="/path/to/REPO_APPS/"
 
-msourcepath="/"
-fsourcepath="/"
-csourcepath="/"
-lsourcepath="/"
-jsourcepath="/"
-asourcepath="/"
+msourcepath="/path/to/M/"
+fsourcepath="/path/to/F/"
+csourcepath="/path/to/C/"
+lsourcepath="/path/to/L/"
+jsourcepath="/path/to/J/"
+asourcepath="/path/to/A/"
 
-# Logs
+# Path Logs
+#
 # Remember put the full path, example /path/to/copiados.log
 
-copiadoslog="copiados.log"
+copiadoslog="/path/to/dryncs.git/copiados.log"
 
 # Log failed Copied
 
-fallidoslog="fallidos.log"
+fallidoslog="/path/to/dryncs.git/fallidos.log"
 
 # Log rsync
 
-rsynclog="dryncs.log"
+rsynclog="/path/to/dryncs.git/dryncs.log"
 
 ################
 #  END CONFIG  #
