@@ -1,4 +1,20 @@
 #!/bin/bash
+#===============================================================================
+#          FILE: dryncs
+#
+#         USAGE: ./dryncs
+#
+#   DESCRIPTION: Copy Files Serialized listed from a text file to one local pc o remote pc
+#
+#       OPTIONS: ---
+#  REQUIREMENTS: rsync, dialog, bash 5.2, samba server, samba client, lsblk, blkid
+#          BUGS: Dialog in the first database update the main menu closed.
+#         NOTES: (Linux) For Remote copies add the resources you wanna share to smb.conf, (Windows) Just add the shared resources
+#        AUTHOR: Erwin Castedo (blkid@protonmail.com)
+#  ORGANIZATION: BIOS Tech (pc.biosxtreme.net)
+#       CREATED: 13/07/2024 21:00
+#      REVISION: 2.0
+#===============================================================================
 #
 ######################
 #    CONFIGURACIÓN   #
