@@ -43,21 +43,23 @@ Check the log files `copiados.log` `fallidos.log` `dryncs.log` for more informat
     ````
     $ sudo apt install rsync
     $ sudo apt install dialog
+    $ sudo apt install lsblk
+    
     ````
 ## Install
 ````
 $ git clone https://github.com/ekardian/dryncs.git
 $ cd dryncs.git
 $ chmod a+rx dryncs.scr dryncs2way.scr dryncs3way.scr
-$ ./dryncs.scr
+$ ./dryncs
 
 # update database of Music, Movies, etc with the option 9
 ````
- - `dryncs.scr` for one target, need config variables in `mdialog_conf`. See inside `mdialog_conf`
- - `dryncs2way.scr` for two target, need config variables inside `dryncs2way.scr`
- - `dryncs3way.scr` for three target, need config variables inside `dryncs3way.scr`
+ - `dryncs` for one target, need config variables in `mdialog_conf`. See inside `mdialog_conf`
+ - `dryncs2way` for two target, need config variables inside `dryncs2way`
+ - `dryncs3way` for three target, need config variables inside `dryncs3way`
 
-Change the config file `mdialog_conf` for `dryncs.scr`
+Change the config file `mdialog_conf` for `dryncs`
 
 ## Example
 For test and practice you can populate dirs and files with `populate-dirs-files` and `populate-dirs-files-ns2`
