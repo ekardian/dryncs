@@ -1,15 +1,16 @@
 #!/bin/bash
 #
-#  -- Script --
+#  -- Script in Bash --
 #
 #  Dryncs, Copy files serialized from local pc or remote pc.
-#    Copyright @ 2023-2024  BIOS Tech <biostech@pc.biosxtreme.net>
-#              @ 2024 Erwin Castedo <blkid@protonmail.com>
+#
+#    Copyright @ 2023-2024, BIOS Tech <biostech@pc.biosxtreme.net>
+#              @ 2024, Erwin Castedo <blkid@protonmail.com>
 #
 # --------------------------------------------------------------------
 #
 #  GNU AFFERO GENERAL PUBLIC LICENSE
-#    Version 3, 19 November 2007
+#     Version 3, 19 November 2007
 #
 #  This program is free software: you can redistribute it and/or modify
 #  it under the terms of the GNU Affero General Public License as published by
