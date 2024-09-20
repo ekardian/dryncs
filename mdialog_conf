@@ -1,5 +1,53 @@
 #!/bin/bash
 #
+#  -- Script in Bash --
+#
+#  Dryncs, Copy files serialized from local pc or remote pc.
+#
+#    Copyright @ 2023-2024, BIOS Tech <biostech@pc.biosxtreme.net>
+#              @ 2024, Erwin Castedo <blkid@protonmail.com>
+#
+# --------------------------------------------------------------------
+#
+#  GNU AFFERO GENERAL PUBLIC LICENSE
+#     Version 3, 19 November 2007
+#
+#  This program is free software: you can redistribute it and/or modify
+#  it under the terms of the GNU Affero General Public License as published by
+#  the Free Software Foundation, either version 3 of the License, or
+#  (at your option) any later version.
+#
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU Affero General Public License for more details.
+#
+#  You should have received a copy of the GNU Affero General Public License
+#  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+#
+#  https://www.gnu.org/licenses/agpl-3.0.txt
+#
+#===============================================================================
+#
+#      What is this:
+#
+#          FILE: dryncs
+#
+#         USAGE: ./dryncs
+#
+#   DESCRIPTION: Copy Files Serialized listed from a text file to one local pc o remote pc
+#
+#       OPTIONS: in config file 'mdialog_conf'
+#  REQUIREMENTS: rsync, dialog, bash 5.2, samba server, samba client, lsblk, blkid
+#          BUGS: Dialog in the first database update the main menu closed.
+#         NOTES: (Linux) For Remote copies add the resources you wanna share to smb.conf, (Windows) Just add the shared resources
+#        AUTHOR: Erwin Castedo <blkid@protonmail.com>
+#  ORGANIZATION: BIOS Tech <pc.biosxtreme.net>
+#       CREATED: 13/07/2024 21:00
+#      REVISION: 2.0
+#
+#===============================================================================
+#
 # Variable dryncs Config File
 #
 # Put full path for variables.
