@@ -25,7 +25,7 @@ Only working the for music and movies. we are cooking yet.
   For copy a list of albums,  just write a music list to copy to anywhere, example write line by line in a file name called mymusic.txt\
   M1234\
   M12345\
-  M123456\
+  M123456
 
 ## Steps
 Warning. This gonna rewrite all the files with the same name in the target.
