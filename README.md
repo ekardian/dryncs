@@ -1,6 +1,6 @@
 # dryncs
 Run in **Linux** and **Windows**\
-Copy serialized dirs and files via [Samba](https://www.samba.org/) with rsync (Linux System/Cygwin for windows) from 1 source with 6 diferent paths to 1 or 2-3 targets(dryncs2way and dryncs3way), and every target with 6 diferent paths too, for copy from 3 source to 1 target use [dryncsnsx](https://github.com/ekardian/dryncsnsx).
+Copy serialized dirs and files via [Samba](https://www.samba.org/) with [rsync](https://rsync.samba.org/) from 1 source with 6 diferent paths to 1 or 2-3 targets(dryncs2way and dryncs3way), and every target with 6 diferent paths too, for copy from 3 source to 1 target use [dryncsnsx](https://github.com/ekardian/dryncsnsx).
 
 Tested in Linux Mint 21.2, Debian 12.\
 Work in [bash](https://www.gnu.org/software/bash/) Linux and [cygwin](https://cygwin.com/) Windows.
