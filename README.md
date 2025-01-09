@@ -5,15 +5,6 @@ Copy serialized dirs and files via [Samba](https://www.samba.org/) with rsync (L
 Tested in Linux Mint 21.2, Debian 12.\
 Work in [bash](https://www.gnu.org/software/bash/) Linux and [cygwin](https://cygwin.com/) Windows.
 
-
-English\
-Script in bash with rsync and dialog for copy serialized files and directories that contain name spaces listed inside archive.txt
-
-Español\
-Script en bash con rsync y dialog para copiar carpetas con nombres con espacio que coincidan con los listados en un archivo de texto archivo.txt.
-
-Only working the for music and movies. we are cooking yet.
-
 ![imagen](https://github.com/ekardian/dryncs/assets/6296036/06476fd4-ede7-4c2c-abee-23b1990565b0)
 
 - For Movies files, example `my-movie-F1234.mkv`, wil conpy only the movie files with the reference `F1234.mkv`.
