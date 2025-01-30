@@ -53,8 +53,8 @@ $ ./dryncs
 Change the config file `mdialog_conf` for `dryncs`
 
 ## Example
-For test and practice you can populate dirs and files with this scripts in the same repository `populate-dirs-files` - `populate-dirs-files-ns2`, and rename files with serialized names and dump to a plain text file with this scripts [add-numbers-bejore-extension.sh](https://github.com/ekardian/scripts-in-bash/blob/main/scripts/add-numbers-before-extension.sh) and [add-numbers-before-filename.sh](https://github.com/ekardian/scripts-in-bash/blob/main/scripts/add-numbers-before-filename.sh)
-Note. this script rewrite all the dirs and files with the same name.
+For test and practice you can populate dirs and files with this scripts in the same repository `populate-dirs-files` - `populate-dirs-files-ns2`, and rename files with serialized names and dump to a plain text file with this scripts [add-numbers-bejore-extension.sh](https://github.com/ekardian/scripts-in-bash/blob/main/scripts/add-numbers-before-extension.sh) and [add-numbers-before-filename.sh](https://github.com/ekardian/scripts-in-bash/blob/main/scripts/add-numbers-before-filename.sh).
+
 ````
 $ chmod a+rx populate-dirs-files populate-dirs-files-ns2
 $ ./populate-dirs-files
